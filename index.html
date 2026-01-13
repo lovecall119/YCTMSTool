@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleStory Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-mesh"></div>
+
+    <div class="converter-card">
+        <header>
+            <h1>MapleStory Currency Converter</h1>
+            <p>即時幣值換算工具</p>
+        </header>
+
+        <form class="converter-form" onsubmit="event.preventDefault();">
+            <div class="input-group">
+                <label for="rateType">
+                    幣值 (萬)
+                    <span class="tooltip" data-tooltip="輸入 2000 代表 1 台幣 = 2000 萬楓幣">?</span>
+                </label>
+                <div class="input-wrapper">
+                    <input type="number" id="rateType" placeholder="2000" value="2000" inputmode="numeric">
+                    <span class="unit">萬 : 1 TWD</span>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span>換算</span>
+            </div>
+
+            <div class="input-group">
+                <label for="ntdInput">台幣 (TWD)</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol">$</span>
+                    <input type="text" id="ntdInput" placeholder="0" inputmode="decimal">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="mesosInput">楓幣 (Mesos)</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol icon-mesos">M</span>
+                    <input type="text" id="mesosInput" placeholder="0" inputmode="decimal">
+                </div>
+                <div class="helper-text" id="mesosChineseDisplay"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

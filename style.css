@@ -65,7 +65,7 @@ body {
 }
 
 .converter-card:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
 }
 
 header {

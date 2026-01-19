@@ -64,9 +64,10 @@ const renderTable = () => {
 
     noDataMsg.style.display = 'none';
 
-    // Only take the latest 7 records for display
+    // Only take the latest 4 records for display
+    const MAX_ITEMS = 4;
     // Note: 'history' is already sorted by desc timestamp from Firestore query
-    const displayItems = history.slice(0, 7);
+    const displayItems = history.slice(0, MAX_ITEMS);
 
     displayItems.forEach((item, index) => {
         // Calculate diffs
@@ -119,6 +120,23 @@ const renderTable = () => {
 
         historyBody.appendChild(row);
     });
+
+    // Pad with empty rows if less than MAX_ITEMS to maintain height
+    const remainingRows = MAX_ITEMS - displayItems.length;
+    for (let i = 0; i < remainingRows; i++) {
+        const row = document.createElement('tr');
+        // Use non-breaking space to ensure row has height
+        // 6 columns to match header
+        row.innerHTML = `
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        `;
+        historyBody.appendChild(row);
+    }
 };
 
 // Add Record

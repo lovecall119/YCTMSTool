@@ -52,6 +52,42 @@
                 </div>
                 <div class="helper-text" id="mesosChineseDisplay"></div>
             </div>
+
+            <div class="divider">
+                <span>資源記錄</span>
+            </div>
+
+            <div class="input-group">
+                <label for="soulInput">靈魂 (Soul)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="soulInput" placeholder="0" inputmode="numeric">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="fragmentInput">碎片 (Fragment)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="fragmentInput" placeholder="0" inputmode="numeric">
+                </div>
+
+                <div class="divider">
+                    <span>燃燒階段監控</span>
+                </div>
+
+                <div class="burning-timer-section">
+                    <div class="timer-display">
+                        <div class="level-box">
+                            <span class="level-label">燃燒階段</span>
+                            <span class="level-value" id="burningLevel">10</span>
+                        </div>
+                        <div class="time-box">
+                            <span class="time-value" id="timerDisplay">15:00</span>
+                        </div>
+                    </div>
+                    <button type="button" class="reset-btn" id="resetTimerBtn">
+                        重置燃燒等級 (10)
+                    </button>
+                </div>
         </form>
     </div>
 

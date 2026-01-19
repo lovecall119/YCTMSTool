@@ -23,8 +23,11 @@ body {
     align-items: center;
     background: #0f0c29;
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    overflow: hidden;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
     color: var(--text-color);
+    padding: 2rem 0;
+    /* Add breathing room for scrolling */
 }
 
 .background-mesh {
@@ -62,6 +65,11 @@ body {
     box-shadow: var(--card-shadow);
     transform: translateY(0);
     transition: transform 0.3s ease;
+}
+
+.converter-card.wide-card {
+    max-width: 800px;
+    /* Wider card for history table */
 }
 
 .converter-card:hover {
@@ -250,4 +258,147 @@ label {
     letter-spacing: 0.5px;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
     /* Enhance readability */
+}
+
+/* Burning Field Timer Styles */
+.burning-timer-section {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.timer-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.level-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.level-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.level-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.time-box {
+    text-align: right;
+}
+
+.time-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    font-variant-numeric: tabular-nums;
+    /* Keeps numbers monospaced to prevent jumping */
+    letter-spacing: 1px;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), #ff4757);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 107, 107, 0.3);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+    filter: brightness(1.1);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* History Table Styles */
+.history-container {
+    margin-top: 2rem;
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    /* Increased font size */
+    text-align: center;
+}
+
+.history-table th {
+    padding: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.history-table td {
+    padding: 1rem 0.5rem;
+    /* Increased padding */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-variant-numeric: tabular-nums;
+}
+
+.history-table tr:last-child td {
+    border-bottom: none;
+}
+
+.history-table tr:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.no-data {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Diff Styles */
+.diff-val {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.diff-pos {
+    color: #ff3838;
+    /* Red for Positive */
+}
+
+.diff-neg {
+    color: #05c46b;
+    /* Green for Negative */
+}
+
+.diff-neutral {
+    color: #b2bec3;
+    /* Grey */
 }

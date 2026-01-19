@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleStory Hexa Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-mesh"></div>
+
+    <div class="converter-card wide-card">
+        <header>
+            <h1>Hexa Matrix Resources</h1>
+            <p>六轉資源記錄工具</p>
+        </header>
+
+        <form class="converter-form" onsubmit="event.preventDefault();">
+
+            <div class="input-group">
+                <label for="soulInput">靈魂 (Soul)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="soulInput" placeholder="0" inputmode="numeric">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="fragmentInput">碎片 (Fragment)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="fragmentInput" placeholder="0" inputmode="numeric">
+                </div>
+            </div>
+
+            <button type="button" class="reset-btn" id="confirmBtn"
+                style="margin-top: 1rem; background: linear-gradient(135deg, #00b894, #00cec9);">
+                確認輸入
+            </button>
+
+            <div class="divider">
+                <span>歷史紀錄</span>
+            </div>
+
+            <div class="history-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>時間</th>
+                            <th>靈魂</th>
+                            <th></th>
+                            <th>碎片</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <!-- Data will be injected here -->
+                    </tbody>
+                </table>
+                <div id="noDataMsg" class="no-data">尚無紀錄</div>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="hexa.js"></script>
+</body>
+
+</html>

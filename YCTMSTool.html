@@ -164,11 +164,35 @@
                 </div>
             </form>
         </div>
+
+        <!-- Section 3: Todo List -->
+        <div class="converter-card" style="min-width: 350px;">
+            <header>
+                <h1>Todo List</h1>
+                <p>待辦事項清單</p>
+            </header>
+
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="text" id="todoInput" placeholder="輸入待辦事項..." style="padding-right: 3rem;">
+                    <button id="addTodoBtn" class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span>列表</span>
+            </div>
+
+            <ul id="todoList" class="todo-list">
+                <!-- Todos will be injected here -->
+            </ul>
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
     <script type="module" src="js/hexa.js"></script>
+    <script type="module" src="js/todo.js"></script>
 </body>
 
 </html>

@@ -432,6 +432,8 @@ color: #b2bec3;
     align-items: center;
     flex: 1;
     cursor: pointer;
+    overflow: hidden;
+    /* Ensure content stays within container */
 }
 
 .checkbox-custom {
@@ -442,6 +444,8 @@ color: #b2bec3;
     margin-right: 12px;
     position: relative;
     transition: all 0.2s;
+    flex-shrink: 0;
+    /* Prevent checkbox from shrinking */
 }
 
 .checkbox-custom.checked {
@@ -463,6 +467,9 @@ color: #b2bec3;
     font-size: 1rem;
     color: var(--text-color);
     transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .todo-item.completed .todo-text {

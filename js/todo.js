@@ -83,7 +83,7 @@ const setupTodoListener = () => {
             li.className = `todo-item ${data.completed ? 'completed' : ''}`;
 
             li.innerHTML = `
-                <div class="todo-content" onclick="toggleTodo('${doc.id}', ${data.completed})">
+                <div class="todo-content" onclick="toggleTodo('${doc.id}', ${data.completed})" title="${data.task}">
                     <div class="checkbox-custom ${data.completed ? 'checked' : ''}"></div>
                     <span class="todo-text">${data.task}</span>
                 </div>

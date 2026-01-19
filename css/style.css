@@ -53,6 +53,15 @@ body {
     }
 }
 
+.col-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 480px;
+    /* Match converter-card max-width */
+}
+
 .converter-card {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
